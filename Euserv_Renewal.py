@@ -53,7 +53,7 @@ def send_status_email(subject_status, log_content):
     msg['To'] = recipient
     try:
         smtp_host = EMAIL_HOST.replace("imap", "smtp")
-        server = smtplib.SMTP(74.125.24.108, 587)
+        server = smtplib.SMTP(smtp_host, 587)
         server.starttls()
         server.login(EMAIL_USERNAME, EMAIL_PASSWORD)
         server.sendmail(sender, [recipient], msg.as_string())
